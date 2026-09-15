@@ -496,4 +496,502 @@ footer {
 </footer>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHAH’E PERFUMES | Premium Fragrances</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f8f1e5;
+  color: #42101a;
+}
+
+header {
+  background: #4b101b;
+  color: #d8b56d;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #b89450;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: #f3dfb0;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.hero {
+  min-height: 78vh;
+  background: #4b101b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 11vw, 110px);
+  color: #d8b56d;
+  letter-spacing: 6px;
+  line-height: 1;
+}
+
+.hero p {
+  color: #f8e9c5;
+  font-size: 14px;
+  letter-spacing: 4px;
+  margin: 25px 0 35px;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  background: #d8b56d;
+  color: #4b101b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  background: #efd79d;
+}
+
+section {
+  padding: 75px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  color: #4b101b;
+}
+
+.section-title p {
+  color: #806b62;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.category-title {
+  max-width: 1150px;
+  margin: 0 auto 25px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  color: #4b101b;
+  border-bottom: 1px solid #d8b56d;
+  padding-bottom: 10px;
+}
+
+.products {
+  max-width: 1150px;
+  margin: 0 auto 65px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.product {
+  background: #fff;
+  border: 1px solid #e2d4bd;
+  padding-bottom: 22px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(75,16,27,.08);
+  transition: transform .2s ease;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+}
+
+.product img {
+  width: 100%;
+  height: 270px;
+  object-fit: contain;
+  background: #f7f0e4;
+  display: block;
+}
+
+.product h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  color: #4b101b;
+  margin: 17px 8px 3px;
+}
+
+.type {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #806b62;
+}
+
+.price {
+  font-size: 19px;
+  font-weight: 600;
+  color: #a67c32;
+  margin: 9px 0 16px;
+}
+
+.product .btn {
+  padding: 11px 15px;
+  font-size: 10px;
+}
+
+.about {
+  background: #4b101b;
+  color: #f8e9c5;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #d8b56d;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 750px;
+  margin: auto;
+  font-size: 14px;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #4b101b;
+  color: #d8b56d;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #d8b56d;
+}
+
+footer {
+  background: #300a11;
+  color: #d8b56d;
+  text-align: center;
+  padding: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 950px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 16px 5%;
+  }
+
+  .logo {
+    font-size: 27px;
+  }
+
+  nav a {
+    margin-left: 8px;
+    font-size: 9px;
+  }
+
+  section {
+    padding: 55px 5%;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .product img {
+    height: 220px;
+  }
+
+  .product h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 430px) {
+  .products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product img {
+    height: 190px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SHAH’E</div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#shop">SHOP</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>SHAH’E</h1>
+    <p>Premium Fragrances • Attars • Oud</p>
+    <a href="#shop" class="btn">EXPLORE COLLECTION</a>
+  </div>
+</section>
+
+<section id="shop">
+
+  <div class="section-title">
+    <h2>Our Collection</h2>
+    <p>Discover your signature scent.</p>
+  </div>
+
+  <h3 class="category-title">PERFUME SPRAYS</h3>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="cr7-spray.jpeg" alt="CR7 Spray">
+      <h3>CR7</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20CR7%20Eau%20de%20Parfum%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="lovely-spray.jpeg" alt="Lovely Spray">
+      <h3>Lovely</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Lovely%20Spray%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="marge-spray.jpeg" alt="Marge Spray">
+      <h3>Marge</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Marge%20Spray%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="misk-rijali-spray.jpeg" alt="Misk Rijali Spray">
+      <h3>Misk Rijali</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹250</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Misk%20Rijali%20Spray%208%20ML%20-%20%E2%82%B9250.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="oud-kuwaiti-spray.jpeg" alt="Oud Kuwaiti Spray">
+      <h3>Oud Kuwaiti</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹250</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Oud%20Kuwaiti%20Spray%208%20ML%20-%20%E2%82%B9250.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="oud-nabeel-spray.jpeg" alt="Oud Nabeel Spray">
+      <h3>Oud Nabeel</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Oud%20Nabeel%20Spray%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="polo-blue-spray.jpeg" alt="Polo Blue Spray">
+      <h3>Polo Blue</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Polo%20Blue%20Spray%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="sabaya-spray.jpeg" alt="Sabaya Spray">
+      <h3>Sabaya</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Sabaya%20Spray%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="solid-spray.jpeg" alt="Solid Spray">
+      <h3>Solid</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Solid%20Spray%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="white-oud-spray.jpeg" alt="White Oud Spray">
+      <h3>White Oud</h3>
+      <div class="type">Eau de Parfum • 8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20White%20Oud%20Spray%208%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+  </div>
+
+  <h3 class="category-title">ATTARS</h3>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="lovely-attar.jpeg" alt="Lovely Attar">
+      <h3>Lovely</h3>
+      <div class="type">Attar • 6 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Lovely%20Attar%206%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="misk-rijali-attar.jpeg" alt="Misk Rijali Attar">
+      <h3>Misk Rijali</h3>
+      <div class="type">Attar • 6 ML</div>
+      <div class="price">₹300</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Misk%20Rijali%20Attar%206%20ML%20-%20%E2%82%B9300.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="oud-kuwaiti-attar.jpeg" alt="Oud Kuwaiti Attar">
+      <h3>Oud Kuwaiti</h3>
+      <div class="type">Attar • 6 ML</div>
+      <div class="price">₹300</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Oud%20Kuwaiti%20Attar%206%20ML%20-%20%E2%82%B9300.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="polo-blue-attar.jpeg" alt="Polo Blue Attar">
+      <h3>Polo Blue</h3>
+      <div class="type">Attar • 6 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Polo%20Blue%20Attar%206%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="sabaya-attar.jpeg" alt="Sabaya Attar">
+      <h3>Sabaya</h3>
+      <div class="type">Attar • 6 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Sabaya%20Attar%206%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+    <div class="product">
+      <img src="solid-attar.jpeg" alt="Solid Attar">
+      <h3>Solid</h3>
+      <div class="type">Attar • 6 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn" target="_blank"
+      href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Solid%20Attar%206%20ML%20-%20%E2%82%B9150.">ORDER</a>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about" id="about">
+  <h2>The Art of Fragrance</h2>
+
+  <p>
+    SHAH’E PERFUMES brings together elegance, character and timeless fragrance.
+    From refined perfume sprays to captivating attars and oud,
+    every scent is selected to leave a memorable impression.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Order Your Fragrance</h2>
+
+  <p>For orders and enquiries, contact SHAH’E PERFUMES on WhatsApp.</p>
+
+  <a class="whatsapp" target="_blank"
+  href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20know%20more%20about%20your%20fragrances.">
+  CHAT ON WHATSAPP
+  </a>
+</section>
+
+<footer>
+  © 2026 SHAH’E PERFUMES — PREMIUM FRAGRANCES
+</footer>
+
+</body>
 </html>
