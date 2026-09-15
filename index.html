@@ -3,326 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SHAH’E PERFUMES — premium perfume sprays and attars. They Follow Your Scent.">
-<title>SHAH’E PERFUMES | They Follow Your Scent.</title>
+<meta name="description" content="SHAH’E PERFUMES — premium perfume sprays and attars. They Follow Your Scent">
+<title>SHAH’E PERFUMES | They Follow Your Scent</title>
 <style>
-:root {
-  --burgundy:#430d2b;
-  --burgundy-dark:#2b071c;
-  --gold:#d3b06b;
-  --gold-light:#ead39a;
-  --cream:#fbf5e9;
-  --ink:#24171d;
-  --muted:#806d76;
-  --white:#fffdf9;
-}
-* {box-sizing:border-box;margin:0;padding:0}
-html {scroll-behavior:smooth}
-body {font-family:Georgia, "Times New Roman", serif;background:var(--cream);color:var(--ink);line-height:1.6}
-a {color:inherit;text-decoration:none}
-header {
-  position:sticky;top:0;z-index:20;background:rgba(67,13,43,.97);
-  border-bottom:1px solid rgba(211,176,107,.35);backdrop-filter:blur(10px)
-}
-.nav {max-width:1180px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo-small {height:58px;width:auto;display:block;object-fit:contain}
-nav {display:flex;gap:24px;align-items:center;font-family:Arial,sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
-nav a {color:#fff5e4;opacity:.9} nav a:hover {color:var(--gold-light)}
-.hero {background:radial-gradient(circle at 50% 40%, #68133e 0, var(--burgundy) 48%, var(--burgundy-dark) 100%);color:#fff7e8;text-align:center;padding:70px 20px 78px}
-.hero-logo {width:min(620px,92vw);max-height:230px;object-fit:contain;margin:0 auto 25px;display:block}
-.tagline {color:var(--gold-light);font-size:clamp(24px,4vw,42px);font-weight:500;letter-spacing:.04em;margin-bottom:12px}
-.hero-copy {max-width:650px;margin:0 auto 30px;font-size:17px;color:#f7ead5}
-.cta {display:inline-block;background:var(--gold);color:var(--burgundy-dark);padding:13px 27px;border-radius:30px;font-family:Arial,sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.section {max-width:1180px;margin:auto;padding:68px 22px}
-.section-head {text-align:center;margin-bottom:34px}
-.eyebrow {font-family:Arial,sans-serif;color:#9b6d2d;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
-h2 {font-size:clamp(30px,4vw,44px);color:var(--burgundy);margin-top:7px}
-.section-intro {max-width:650px;margin:9px auto 0;color:var(--muted);font-size:16px}
-.product-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.product-card {background:var(--white);border:1px solid #eadfcf;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(54,20,34,.08);transition:transform .2s ease,box-shadow .2s ease}
-.product-card:hover {transform:translateY(-4px);box-shadow:0 14px 30px rgba(54,20,34,.13)}
-.product-image-wrap {background:#fff;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.product-image-wrap img {width:100%;height:100%;object-fit:cover;display:block}
-.product-info {padding:18px}
-.product-type {font-family:Arial,sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#a17b46}
-.product-info h3 {font-size:24px;color:var(--burgundy);margin:3px 0 10px}
-.product-meta {display:flex;justify-content:space-between;align-items:center;font-family:Arial,sans-serif;margin-bottom:15px}
-.product-meta span {color:var(--muted);font-size:13px}
-.product-meta strong {font-size:20px;color:var(--burgundy)}
-.order-btn {display:block;text-align:center;background:var(--burgundy);color:#fff8ed;border-radius:8px;padding:11px 8px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.04em}
-.order-btn:hover {background:#650f3e}
-.about {background:#fffdf9;border-top:1px solid #eadfcf;border-bottom:1px solid #eadfcf}
-.about-inner {max-width:850px;margin:auto;text-align:center}
-.about p {color:#66555e;font-size:17px;margin-top:15px}
-.contact {text-align:center;background:var(--burgundy);color:#fff4df}
-.contact h2 {color:#fff4df}
-.contact p {margin:10px auto 24px;max-width:620px;color:#ead9c7}
-.whatsapp {display:inline-block;background:var(--gold);color:var(--burgundy-dark);padding:13px 24px;border-radius:28px;font-family:Arial,sans-serif;font-weight:700}
-footer {background:var(--burgundy-dark);color:#cdbba9;text-align:center;padding:24px 15px;font-family:Arial,sans-serif;font-size:12px}
-@media(max-width:980px) {.product-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px) {
-  .nav{padding:9px 15px} .logo-small{height:48px} nav{gap:12px;font-size:11px}
-  nav a:nth-child(3){display:none}
-  .hero{padding:48px 18px 58px} .hero-logo{max-height:170px}
-  .product-grid{grid-template-columns:repeat(2,1fr);gap:14px}
-  .product-info{padding:13px} .product-info h3{font-size:20px} .order-btn{font-size:11px}
-  .section{padding:52px 14px}
-}
-@media(max-width:430px) {
-  nav{gap:8px} nav a{font-size:10px} .product-grid{grid-template-columns:1fr 1fr}
-  .product-image-wrap{aspect-ratio:4/5}
-}
+:root{--burgundy:#3b0d29;--burgundy2:#4b1235;--gold:#ceaf73;--gold2:#ead39a;--cream:#fbf5e9;--ink:#281a20;--muted:#796871;--white:#fffdf9;--line:#e8dcc9}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:Georgia,"Times New Roman",serif;background:var(--cream);color:var(--ink);line-height:1.55} a{text-decoration:none;color:inherit} button{font:inherit;cursor:pointer}
+header{position:sticky;top:0;z-index:30;background:var(--burgundy);border-bottom:1px solid rgba(206,175,115,.38)}
+.nav{max-width:1180px;margin:auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo-small{height:54px;width:auto;display:block;object-fit:contain}nav{display:flex;gap:24px;align-items:center;font-family:Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase}nav a{color:#fff7e9;opacity:.95}
+.cart-btn{border:1px solid rgba(234,211,154,.65);background:transparent;color:#fff7e9;padding:9px 13px;border-radius:22px;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.05em}.cart-count{display:inline-flex;min-width:20px;height:20px;align-items:center;justify-content:center;border-radius:50%;background:var(--gold);color:var(--burgundy);margin-left:5px;font-weight:700}
+.hero{background:var(--burgundy);color:#fff7e8;text-align:center;padding:62px 20px 70px}.hero-logo{width:min(600px,92vw);height:auto;display:block;margin:0 auto 22px}.tagline{font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;font-style:italic;font-weight:600;letter-spacing:.045em;color:var(--gold2);font-size:clamp(27px,4.4vw,46px);margin-bottom:25px}.cta{display:inline-block;background:var(--gold);color:var(--burgundy);padding:12px 25px;border-radius:28px;font-family:Arial,sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.notice{background:#fff8ea;border-bottom:1px solid var(--line);text-align:center;padding:13px 18px;color:var(--burgundy);font-family:Arial,sans-serif;font-size:13px}.notice strong{font-weight:800}
+.section{max-width:1180px;margin:auto;padding:62px 22px}.section-head{text-align:center;margin-bottom:30px}.eyebrow{font-family:Arial,sans-serif;color:#9b6d2d;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}h2{font-size:clamp(30px,4vw,44px);color:var(--burgundy);margin-top:6px}.section-intro{max-width:650px;margin:8px auto 0;color:var(--muted)}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product-card{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 7px 22px rgba(54,20,34,.08);transition:.2s}.product-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(54,20,34,.13)}.product-image{aspect-ratio:3/4;background:#fff;overflow:hidden}.product-image img{width:100%;height:100%;object-fit:cover;display:block}.product-info{padding:16px}.product-type{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#9b7a4a}.product-info h3{font-size:22px;color:var(--burgundy);margin:2px 0 9px}.product-meta{display:flex;justify-content:space-between;align-items:center;font-family:Arial,sans-serif;margin-bottom:12px}.product-meta span{font-size:12px;color:var(--muted)}.product-meta strong{font-size:19px;color:var(--burgundy)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.actions button{border-radius:7px;padding:9px 6px;font-family:Arial,sans-serif;font-size:11px;font-weight:700}.details-btn{background:transparent;border:1px solid #d6c4a7;color:var(--burgundy)}.cart-add{background:var(--burgundy);border:1px solid var(--burgundy);color:#fff7e9}.order-now{grid-column:1/-1;background:var(--gold);border:1px solid var(--gold);color:var(--burgundy);padding:10px;border-radius:7px;font-family:Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.03em}
+.about{background:#fffdf9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.about-inner{max-width:850px;margin:auto;text-align:center}.about p{color:#66555e;font-size:17px;margin-top:14px}.contact{background:var(--burgundy);color:#fff4df;text-align:center}.contact h2{color:#fff4df}.contact p{margin:9px auto 22px;max-width:620px;color:#ead9c7}.whatsapp{display:inline-block;background:var(--gold);color:var(--burgundy);padding:12px 24px;border-radius:27px;font-family:Arial,sans-serif;font-weight:800}footer{background:#28071b;color:#cdbba9;text-align:center;padding:22px;font-family:Arial,sans-serif;font-size:11px}
+.overlay{position:fixed;inset:0;background:rgba(24,7,16,.62);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}.overlay.open{display:flex}.modal{width:min(560px,96vw);max-height:90vh;overflow:auto;background:var(--white);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);position:relative}.modal-close{position:absolute;right:12px;top:10px;width:34px;height:34px;border-radius:50%;border:0;background:var(--burgundy);color:#fff;font-size:20px}.modal-body{display:grid;grid-template-columns:42% 58%}.modal-image{min-height:300px;background:#fff}.modal-image img{width:100%;height:100%;object-fit:cover}.modal-copy{padding:28px 24px}.modal-copy .eyebrow{margin-bottom:5px}.modal-copy h3{font-size:30px;color:var(--burgundy);margin-bottom:7px}.modal-copy .price{font-family:Arial,sans-serif;font-size:21px;color:var(--burgundy);font-weight:800;margin:9px 0}.modal-copy p{color:var(--muted);font-size:14px;margin-bottom:18px}.modal-buttons{display:grid;gap:9px}.modal-buttons button{padding:11px;border-radius:8px;font-family:Arial,sans-serif;font-weight:700;font-size:12px}.modal-cart{background:var(--burgundy);color:#fff;border:1px solid var(--burgundy)}.modal-order{background:var(--gold);color:var(--burgundy);border:1px solid var(--gold)}
+.cart-modal{width:min(650px,96vw)}.cart-body{padding:25px}.cart-body h3{font-size:30px;color:var(--burgundy);margin-bottom:16px}.cart-empty{text-align:center;color:var(--muted);padding:30px 5px}.cart-row{display:grid;grid-template-columns:68px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.cart-row img{width:68px;height:78px;object-fit:cover;border-radius:7px}.cart-name{font-weight:700;color:var(--burgundy)}.cart-sub{font-family:Arial,sans-serif;font-size:12px;color:var(--muted);margin-top:3px}.qty{display:flex;align-items:center;gap:7px;margin-top:7px}.qty button{width:27px;height:27px;border:1px solid #d8c8b2;background:#fff;border-radius:5px;color:var(--burgundy);font-weight:700}.qty span{min-width:20px;text-align:center;font-family:Arial,sans-serif;font-size:12px}.remove{border:0;background:none;color:#a33b55;font-family:Arial,sans-serif;font-size:11px;margin-left:8px}.cart-price{text-align:right;font-family:Arial,sans-serif;font-weight:700;color:var(--burgundy)}.cart-summary{margin-top:18px;border-top:1px solid var(--line);padding-top:15px;font-family:Arial,sans-serif}.sum-line{display:flex;justify-content:space-between;margin:7px 0}.sum-total{font-size:18px;font-weight:800;color:var(--burgundy);padding-top:7px;border-top:1px solid var(--line)}.shipping-note{font-size:11px;color:var(--muted);margin:8px 0 15px}.place-order{width:100%;padding:13px;border:0;border-radius:9px;background:var(--gold);color:var(--burgundy);font-weight:900;letter-spacing:.04em}.place-order:disabled{opacity:.5;cursor:not-allowed}
+@media(max-width:980px){.product-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:720px){.nav{padding:8px 14px}.logo-small{height:47px}nav{gap:11px;font-size:10px}nav a:nth-child(3){display:none}.hero{padding:45px 15px 55px}.hero-logo{width:min(500px,95vw)}.product-grid{grid-template-columns:repeat(2,1fr);gap:14px}.section{padding:50px 14px}.product-info{padding:13px}.product-info h3{font-size:19px}.modal-body{grid-template-columns:1fr}.modal-image{height:280px;min-height:0}.modal-copy{padding:22px}.cart-row{grid-template-columns:58px 1fr}.cart-row img{width:58px;height:68px}.cart-price{grid-column:2;text-align:left}.actions button{font-size:10px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <a href="#home"><img class="logo-small" src="Logo.png" alt="SHAH’E PERFUMES"></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
+<header><div class="nav"><a href="#home"><img class="logo-small" src="Logo.png" alt="SHAH’E PERFUMES"></a><nav><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a><button class="cart-btn" onclick="openCart()">Cart <span class="cart-count" id="cartCount">0</span></button></nav></div></header>
+<section class="hero" id="home"><img class="hero-logo" src="Logo.png" alt="SHAH’E PERFUMES"><div class="tagline">They Follow Your Scent</div><a class="cta" href="#shop">Explore the Collection</a></section>
+<div class="notice"><strong>Free shipping across Kerala</strong> on a purchase of 3 or more products. Otherwise, delivery is <strong>₹50 per order</strong>.</div>
 <main>
-<section class="hero" id="home">
-  <img class="hero-logo" src="Logo.png" alt="SHAH’E PERFUMES">
-  <div class="tagline">They Follow Your Scent.</div>
-  <p class="hero-copy">Discover refined perfume sprays and attars crafted for a lasting impression.</p>
-  <a class="cta" href="#shop">Explore the Collection</a>
-</section>
+<section class="section" id="shop"><div class="section-head"><div class="eyebrow">The Collection</div><h2>Perfume Sprays</h2><p class="section-intro">8 ML fragrances designed to leave a memorable trail.</p></div><div class="product-grid" id="sprays"></div></section>
+<section class="section" style="padding-top:10px"><div class="section-head"><div class="eyebrow">Traditional &amp; Timeless</div><h2>Attars</h2><p class="section-intro">6 ML concentrated fragrances for depth, character and tradition.</p></div><div class="product-grid" id="attars"></div></section>
+<section class="section about" id="about"><div class="about-inner"><div class="eyebrow">About SHAH’E</div><h2>Wear Your Presence.</h2><p>SHAH’E PERFUMES brings together elegant fragrance profiles in convenient sizes, with a focus on character, confidence and a scent that stays remembered.</p></div></section>
+<section class="section contact" id="contact"><div class="eyebrow">Order Direct</div><h2>Find Your Signature Scent.</h2><p>Choose your fragrances, add them to your cart, review your order and place it directly through WhatsApp.</p><a class="whatsapp" href="https://wa.me/919497864457" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
+</main><footer>© 2026 SHAH’E PERFUMES. All rights reserved.</footer>
 
-<section class="section" id="shop">
-  <div class="section-head">
-    <div class="eyebrow">The Collection</div>
-    <h2>Perfume Sprays</h2>
-    <p class="section-intro">8 ML Eau de Parfum. Personal fragrances designed to leave a memorable trail.</p>
-  </div>
-  <div class="product-grid">
-    
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="cr7-spray.jpeg" alt="SHAH’E CR7 Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>CR7</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20CR7%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
+<div class="overlay" id="productOverlay" onclick="closeOnBackdrop(event,'productOverlay')"><div class="modal"><button class="modal-close" onclick="closeModal('productOverlay')">×</button><div class="modal-body"><div class="modal-image"><img id="modalImg" src="" alt=""></div><div class="modal-copy"><div class="eyebrow" id="modalType"></div><h3 id="modalName"></h3><div class="price" id="modalPrice"></div><p id="modalDescription"></p><div class="modal-buttons"><button class="modal-cart" onclick="addModalToCart()">Add to the Cart</button><button class="modal-order" onclick="orderModalNow()">Order Now</button></div></div></div></div></div>
+<div class="overlay" id="cartOverlay" onclick="closeOnBackdrop(event,'cartOverlay')"><div class="modal cart-modal"><button class="modal-close" onclick="closeModal('cartOverlay')">×</button><div class="cart-body"><div class="eyebrow">Your Selection</div><h3>Shopping Cart</h3><div id="cartItems"></div><div class="cart-summary"><div class="sum-line"><span>Products</span><strong id="subtotal">₹0</strong></div><div class="sum-line"><span>Delivery</span><strong id="delivery">₹0</strong></div><div class="sum-line sum-total"><span>Total</span><strong id="total">₹0</strong></div><div class="shipping-note" id="shippingNote"></div><button class="place-order" id="placeOrder" onclick="placeOrder()">Place Your Order</button></div></div></div></div>
 
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="lovely-spray.jpeg" alt="SHAH’E Lovely Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Lovely</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Lovely%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="marge-spray.jpeg" alt="SHAH’E Marge Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Marge</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Marge%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="misk-rijali-spray.jpeg" alt="SHAH’E Misk Rijali Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Misk Rijali</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹250</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Misk%20Rijali%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9250." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="oud-kuwaiti-spray.jpeg" alt="SHAH’E Oud Kuwaiti Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Oud Kuwaiti</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹250</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Oud%20Kuwaiti%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9250." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="oud-nabeel-spray.jpeg" alt="SHAH’E Oud Nabeel Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Oud Nabeel</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Oud%20Nabeel%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="polo-blue-spray.jpeg" alt="SHAH’E Polo Blue Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Polo Blue</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Polo%20Blue%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="sabaya-spray.jpeg" alt="SHAH’E Sabaya Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Sabaya</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Sabaya%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="solid-spray.jpeg" alt="SHAH’E Solid Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>Solid</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Solid%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="white-oud-spray.jpeg" alt="SHAH’E White Oud Perfume Spray" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Perfume Spray</span>
-          <h3>White Oud</h3>
-          <div class="product-meta"><span>8 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20White%20Oud%20Perfume%20Spray%208%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-  </div>
-</section>
-
-<section class="section" style="padding-top:10px">
-  <div class="section-head">
-    <div class="eyebrow">Traditional &amp; Timeless</div>
-    <h2>Attars</h2>
-    <p class="section-intro">6 ML concentrated attars for those who appreciate depth, character and tradition.</p>
-  </div>
-  <div class="product-grid">
-    
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="lovely-attar.jpeg" alt="SHAH’E Lovely Attar" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Attar</span>
-          <h3>Lovely</h3>
-          <div class="product-meta"><span>6 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Lovely%20Attar%206%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="misk-rijali-attar.jpeg" alt="SHAH’E Misk Rijali Attar" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Attar</span>
-          <h3>Misk Rijali</h3>
-          <div class="product-meta"><span>6 ML</span><strong>₹300</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Misk%20Rijali%20Attar%206%20ML%20-%20%E2%82%B9300." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="oud-kuwaiti-attar.jpeg" alt="SHAH’E Oud Kuwaiti Attar" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Attar</span>
-          <h3>Oud Kuwaiti</h3>
-          <div class="product-meta"><span>6 ML</span><strong>₹300</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Oud%20Kuwaiti%20Attar%206%20ML%20-%20%E2%82%B9300." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="polo-blue-attar.jpeg" alt="SHAH’E Polo Blue Attar" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Attar</span>
-          <h3>Polo Blue</h3>
-          <div class="product-meta"><span>6 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Polo%20Blue%20Attar%206%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="sabaya-attar.jpeg" alt="SHAH’E Sabaya Attar" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Attar</span>
-          <h3>Sabaya</h3>
-          <div class="product-meta"><span>6 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Sabaya%20Attar%206%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="solid-attar.jpeg" alt="SHAH’E Solid Attar" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-type">Attar</span>
-          <h3>Solid</h3>
-          <div class="product-meta"><span>6 ML</span><strong>₹150</strong></div>
-          <a class="order-btn" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Solid%20Attar%206%20ML%20-%20%E2%82%B9150." target="_blank" rel="noopener">Order on WhatsApp</a>
-        </div>
-      </article>
-  </div>
-</section>
-
-<section class="section about" id="about">
-  <div class="about-inner">
-    <div class="eyebrow">About SHAH’E</div>
-    <h2>Wear Your Presence.</h2>
-    <p>SHAH’E PERFUMES brings together elegant fragrance profiles in convenient sizes, with a focus on character, confidence and a scent that stays remembered.</p>
-  </div>
-</section>
-
-<section class="section contact" id="contact">
-  <div class="eyebrow">Order Direct</div>
-  <h2>Find Your Signature Scent.</h2>
-  <p>Choose your fragrance and place your order directly through WhatsApp.</p>
-  <a class="whatsapp" href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Chat on WhatsApp</a>
-</section>
-</main>
-
-<footer>© 2026 SHAH’E PERFUMES. All rights reserved.</footer>
-</body>
-</html>
+<script>
+const products=[
+{name:'CR7',type:'Perfume Spray',size:'8 ML',price:150,img:'cr7-spray.jpeg',desc:'A confident, fresh and energetic fragrance profile for everyday wear.'},
+{name:'Lovely',type:'Perfume Spray',size:'8 ML',price:150,img:'lovely-spray.jpeg',desc:'A charming fragrance with a soft, elegant character.'},
+{name:'Marge',type:'Perfume Spray',size:'8 ML',price:150,img:'marge-spray.jpeg',desc:'A distinctive everyday scent with a memorable personality.'},
+{name:'Misk Rijali',type:'Perfume Spray',size:'8 ML',price:250,img:'misk-rijali-spray.jpeg',desc:'A rich musk-led fragrance with a warm and luxurious presence.'},
+{name:'Oud Kuwaiti',type:'Perfume Spray',size:'8 ML',price:250,img:'oud-kuwaiti-spray.jpeg',desc:'A deep oud-inspired fragrance with a bold oriental character.'},
+{name:'Oud Nabeel',type:'Perfume Spray',size:'8 ML',price:150,img:'oud-nabeel-spray.jpeg',desc:'A warm, woody oud profile made for a strong impression.'},
+{name:'Polo Blue',type:'Perfume Spray',size:'8 ML',price:150,img:'polo-blue-spray.jpeg',desc:'A fresh, clean and versatile fragrance for daily wear.'},
+{name:'Sabaya',type:'Perfume Spray',size:'8 ML',price:150,img:'sabaya-spray.jpeg',desc:'A smooth and appealing fragrance with an elegant finish.'},
+{name:'Solid',type:'Perfume Spray',size:'8 ML',price:150,img:'solid-spray.jpeg',desc:'A confident, lasting fragrance with a distinctive character.'},
+{name:'White Oud',type:'Perfume Spray',size:'8 ML',price:150,img:'white-oud-spray.jpeg',desc:'A refined oud profile with a lighter, polished character.'},
+{name:'Lovely',type:'Attar',size:'6 ML',price:150,img:'lovely-attar.jpeg',desc:'A concentrated attar with a soft and graceful fragrance character.'},
+{name:'Misk Rijali',type:'Attar',size:'6 ML',price:300,img:'misk-rijali-attar.jpeg',desc:'A rich concentrated musk fragrance with a luxurious presence.'},
+{name:'Oud Kuwaiti',type:'Attar',size:'6 ML',price:300,img:'oud-kuwaiti-attar.jpeg',desc:'A concentrated oriental oud profile with depth and warmth.'},
+{name:'Polo Blue',type:'Attar',size:'6 ML',price:150,img:'polo-blue-attar.jpeg',desc:'A concentrated fresh and clean fragrance for everyday use.'},
+{name:'Sabaya',type:'Attar',size:'6 ML',price:150,img:'sabaya-attar.jpeg',desc:'A smooth concentrated fragrance with an elegant character.'},
+{name:'Solid',type:'Attar',size:'6 ML',price:150,img:'solid-attar.jpeg',desc:'A concentrated, confident scent with a distinctive personality.'}
+];
+let cart=JSON.parse(localStorage.getItem('shaheCart')||'[]'); let selectedIndex=null;
+function waUrl(items){let text='Hello SHAH’E PERFUMES, I would like to place my order.\n\n';items.forEach(x=>{text+=`${x.name} ${x.type} ${x.size} × ${x.qty} — ₹${x.price*x.qty}\n`});let count=items.reduce((s,x)=>s+x.qty,0), sub=items.reduce((s,x)=>s+x.price*x.qty,0), ship=count>=3?0:50;text+=`\nProducts: ₹${sub}\nDelivery: ₹${ship}\nTotal: ₹${sub+ship}\n\nPlease confirm my order.`;return 'https://wa.me/919497864457?text='+encodeURIComponent(text)}
+function renderProducts(list,id,offset=0){document.getElementById(id).innerHTML=list.map((p,i)=>{let idx=offset+i;return `<article class="product-card"><button style="display:block;width:100%;border:0;background:none;padding:0;text-align:left" onclick="openProduct(${idx})" aria-label="View ${p.name} ${p.type}"><div class="product-image"><img src="${p.img}" alt="SHAH’E ${p.name} ${p.type}" loading="lazy"></div></button><div class="product-info"><span class="product-type">${p.type}</span><h3>${p.name}</h3><div class="product-meta"><span>${p.size}</span><strong>₹${p.price}</strong></div><div class="actions"><button class="details-btn" onclick="openProduct(${idx})">View Details</button><button class="cart-add" onclick="addToCart(${idx})">Add to the Cart</button><button class="order-now" onclick="orderNow(${idx})">Order Now</button></div></div></article>`}).join('')}
+renderProducts(products.slice(0,10),'sprays',0);renderProducts(products.slice(10),'attars',10);updateCartCount();
+function openProduct(i){selectedIndex=i;let p=products[i];document.getElementById('modalImg').src=p.img;document.getElementById('modalImg').alt=p.name+' '+p.type;document.getElementById('modalType').textContent=p.type+' · '+p.size;document.getElementById('modalName').textContent=p.name;document.getElementById('modalPrice').textContent='₹'+p.price;document.getElementById('modalDescription').textContent=p.desc;document.getElementById('productOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function addModalToCart(){if(selectedIndex!==null){addToCart(selectedIndex);closeModal('productOverlay');openCart()}}
+function orderModalNow(){if(selectedIndex!==null){let p=products[selectedIndex];window.open(waUrl([{...p,qty:1}]),'_blank')}}
+function orderNow(i){let p=products[i];window.open(waUrl([{...p,qty:1}]),'_blank')}
+function addToCart(i){let p=products[i],found=cart.find(x=>x.index===i);if(found)found.qty++;else cart.push({index:i,qty:1});saveCart()}
+function changeQty(i,d){let item=cart.find(x=>x.index===i);if(!item)return;item.qty+=d;if(item.qty<1)cart=cart.filter(x=>x.index!==i);saveCart();renderCart()}
+function removeItem(i){cart=cart.filter(x=>x.index!==i);saveCart();renderCart()}
+function saveCart(){localStorage.setItem('shaheCart',JSON.stringify(cart));updateCartCount()}
+function updateCartCount(){document.getElementById('cartCount').textContent=cart.reduce((s,x)=>s+x.qty,0)}
+function openCart(){renderCart();document.getElementById('cartOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function renderCart(){let box=document.getElementById('cartItems');if(!cart.length){box.innerHTML='<div class="cart-empty">Your cart is empty.<br>Add products to review your order here.</div>';document.getElementById('placeOrder').disabled=true;document.getElementById('subtotal').textContent='₹0';document.getElementById('delivery').textContent='₹0';document.getElementById('total').textContent='₹0';document.getElementById('shippingNote').textContent='Add at least 3 products to qualify for free shipping across Kerala.';return}document.getElementById('placeOrder').disabled=false;box.innerHTML=cart.map(x=>{let p=products[x.index];return `<div class="cart-row"><img src="${p.img}" alt="${p.name}"><div><div class="cart-name">${p.name}</div><div class="cart-sub">${p.type} · ${p.size} · ₹${p.price} each</div><div class="qty"><button onclick="changeQty(${x.index},-1)">−</button><span>${x.qty}</span><button onclick="changeQty(${x.index},1)">+</button><button class="remove" onclick="removeItem(${x.index})">Remove</button></div></div><div class="cart-price">₹${p.price*x.qty}</div></div>`}).join('');let count=cart.reduce((s,x)=>s+x.qty,0),sub=cart.reduce((s,x)=>s+products[x.index].price*x.qty,0),ship=count>=3?0:50;document.getElementById('subtotal').textContent='₹'+sub;document.getElementById('delivery').textContent=ship?'₹50':'FREE';document.getElementById('total').textContent='₹'+(sub+ship);document.getElementById('shippingNote').textContent=count>=3?'Free shipping applied across Kerala (3 or more products).':'Delivery charge of ₹50 applies. Add '+(3-count)+' more product'+(3-count===1?'':'s')+' for free shipping.'}
+function placeOrder(){if(!cart.length)return;window.open(waUrl(cart.map(x=>({...products[x.index],qty:x.qty}))),'_blank')}
+function closeModal(id){document.getElementById(id).classList.remove('open');if(!document.querySelector('.overlay.open'))document.body.style.overflow=''}
+function closeOnBackdrop(e,id){if(e.target.id===id)closeModal(id)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal('productOverlay');closeModal('cartOverlay')}})
+</script>
+</body></html>
