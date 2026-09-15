@@ -1,84 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHAH’E — Coming Soon</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHAH’E PERFUMES | Premium Fragrances</title>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: #f8f5ef;
-      font-family: Georgia, serif;
-      color: #252018;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
 
-    .container {
-      padding: 40px 25px;
-      max-width: 700px;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .brand {
-      font-size: 56px;
-      letter-spacing: 8px;
-      margin-bottom: 15px;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .tagline {
-      font-size: 18px;
-      letter-spacing: 4px;
-      margin-bottom: 55px;
-    }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f8f1e5;
+  color: #3b1018;
+  line-height: 1.6;
+}
 
-    .coming {
-      font-size: 28px;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
+header {
+  background: #4b101b;
+  color: #d8b56d;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #b89450;
+}
 
-    .description {
-      font-size: 17px;
-      line-height: 1.8;
-      margin-bottom: 40px;
-    }
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 
-    .footer {
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-  </style>
+nav a {
+  color: #f3dfb0;
+  text-decoration: none;
+  margin-left: 28px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.hero {
+  min-height: 78vh;
+  background: linear-gradient(rgba(75,16,27,.88), rgba(75,16,27,.94));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 10vw, 105px);
+  color: #d8b56d;
+  letter-spacing: 5px;
+  line-height: .95;
+}
+
+.hero p {
+  color: #f8e9c5;
+  font-size: 15px;
+  letter-spacing: 4px;
+  margin: 25px 0 35px;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #d8b56d;
+  color: #4b101b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  background: #f0d79c;
+}
+
+section {
+  padding: 80px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  color: #4b101b;
+}
+
+.section-title p {
+  color: #806b62;
+  font-size: 14px;
+}
+
+.products {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+.product {
+  background: white;
+  border: 1px solid #e2d4bd;
+  padding-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(75,16,27,.08);
+}
+
+.product img {
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
+  background: #f7f0e4;
+  display: block;
+}
+
+.product h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  color: #4b101b;
+  margin: 22px 15px 5px;
+}
+
+.product .size {
+  color: #806b62;
+  font-size: 13px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 600;
+  color: #a67c32;
+  margin: 12px 0 20px;
+}
+
+.about {
+  background: #4b101b;
+  color: #f8e9c5;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #d8b56d;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 750px;
+  margin: auto;
+  font-size: 15px;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #4b101b;
+  color: #d8b56d;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #d8b56d;
+}
+
+footer {
+  background: #300a11;
+  color: #d8b56d;
+  text-align: center;
+  padding: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 16px 5%;
+  }
+
+  .logo {
+    font-size: 27px;
+  }
+
+  nav a {
+    margin-left: 10px;
+    font-size: 10px;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  .product img {
+    height: 330px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<header>
+  <div class="logo">SHAH’E</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#shop">SHOP</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
 
-    <div class="brand">SHAH’E</div>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>SHAH’E</h1>
+    <p>Premium Fragrances • Attars • Oud</p>
+    <a href="#shop" class="btn">EXPLORE COLLECTION</a>
+  </div>
+</section>
 
-    <div class="tagline">
-      THE ART OF FRAGRANCE
+<section id="shop">
+  <div class="section-title">
+    <h2>Our Fragrances</h2>
+    <p>Discover your signature scent.</p>
+  </div>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="cr7.jpg" alt="CR7 Eau de Parfum">
+      <h3>CR7 Eau de Parfum</h3>
+      <div class="size">8 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn"
+         href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20CR7%20Eau%20de%20Parfum%208%20ML%20-%20%E2%82%B9150."
+         target="_blank">
+        ORDER ON WHATSAPP
+      </a>
     </div>
 
-    <div class="coming">
-      COMING SOON
-    </div>
-
-    <div class="description">
-      Perfumes • Attar • Oud • Bakhoor • Islamic Gifts
-      <br><br>
-      A new fragrance experience is on its way.
-    </div>
-
-    <div class="footer">
-      SHAH’E PERFUMES
+    <div class="product">
+      <img src="lovely.jpg" alt="Lovely Attar">
+      <h3>Lovely Attar</h3>
+      <div class="size">6 ML</div>
+      <div class="price">₹150</div>
+      <a class="btn"
+         href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20order%20Lovely%20Attar%206%20ML%20-%20%E2%82%B9150."
+         target="_blank">
+        ORDER ON WHATSAPP
+      </a>
     </div>
 
   </div>
+</section>
+
+<section class="about" id="about">
+  <h2>The Art of Fragrance</h2>
+  <p>
+    SHAH’E PERFUMES brings together elegance, character and timeless fragrance.
+    From refined perfumes to captivating attars and oud, every scent is chosen
+    to leave a memorable impression.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Order Your Fragrance</h2>
+  <p>For orders and enquiries, contact SHAH’E PERFUMES on WhatsApp.</p>
+
+  <a class="whatsapp"
+     href="https://wa.me/919497864457?text=Hello%20SHAH%E2%80%99E%20PERFUMES%2C%20I%20would%20like%20to%20know%20more%20about%20your%20fragrances."
+     target="_blank">
+    CHAT ON WHATSAPP
+  </a>
+</section>
+
+<footer>
+  © 2026 SHAH’E PERFUMES — PREMIUM FRAGRANCES
+</footer>
 
 </body>
 </html>
