@@ -659,7 +659,7 @@ if(sort==="high")list.sort((a,b)=>Math.max(...products.filter(x=>x.name===b.name
 if(sort==="low")list.sort((a,b)=>Math.min(...products.filter(x=>x.name===a.name&&x.type===a.type).map(x=>x.price))-Math.min(...products.filter(x=>x.name===b.name&&x.type===b.type).map(x=>x.price))||a.name.localeCompare(b.name));
 if(sort==="category")list.sort((a,b)=>a.type.localeCompare(b.type)||a.name.localeCompare(b.name));
 if(sort==="sold"){const priority=["Marge","CR7","Oud Kuwaiti","Oud Nabeel","White Oud","Misk Rijali"];list.sort((a,b)=>{let pa=priority.indexOf(a.name),pb=priority.indexOf(b.name);if(pa!==-1&&pb!==-1)return pa-pb;if(pa!==-1)return-1;if(pb!==-1)return 1;return (b.sold||0)-(a.sold||0)})}
-document.getElementById("productGrid").innerHTML=list.length?list.map(p=>{const variants=products.filter(x=>x.name===p.name&&x.type===p.type);const def=variants.find(x=>x.size===(p.type==="EDP"?"8 ML":"6 ML"))||variants[0];const min=Math.min(...variants.map(x=>x.price)),max=Math.max(...variants.map(x=>x.price));const priceText=min===max?`₹${min}`:`From ₹${min}`;return `<div class="product-card" onclick="openProduct(${products.indexOf(p)})"><img src="${p.image}" alt="${p.name} ${p.type}"><div class="type">${p.type}</div><h4>${p.name}</h4><div class="price">${priceText}</div><div class="size-note">${variants.map(x=>x.size).join(" · ")}</div><div class="card-actions"><button class="btn" onclick="event.stopPropagation();openProduct(${products.indexOf(p)})">View Details</button><button class="btn primary" onclick="event.stopPropagation();addToCart(${products.indexOf(def)})">Add to Cart</button></div></div>`}).join(""):'<div class="empty" style="grid-column:1/-1">No products found.</div>'
+document.getElementById("productGrid").innerHTML=list.length?list.map(p=>{const variants=products.filter(x=>x.name===p.name&&x.type===p.type);const def=variants.find(x=>x.size===(p.type==="EDP"?"8 ML":"6 ML"))||variants[0];const min=Math.min(...variants.map(x=>x.price)),max=Math.max(...variants.map(x=>x.price));const priceText=min===max?`₹${min}`:`From ₹${min}`;const sizeOptions=variants.map(x=>`<option value="${products.indexOf(x)}" ${x===def?'selected':''}>${x.size} — ₹${x.price}</option>`).join("");return `<div class="product-card" onclick="openProduct(${products.indexOf(p)})"><img src="${p.image}" alt="${p.name} ${p.type}"><div class="type">${p.type}</div><h4>${p.name}</h4><div class="price">${priceText}</div><div class="size-note">SELECT SIZE</div><select class="product-size-select card-size-select" onclick="event.stopPropagation()" onchange="event.stopPropagation()" id="size-${products.indexOf(p)}">${sizeOptions}</select><div class="card-actions"><button class="btn" onclick="event.stopPropagation();openProduct(${products.indexOf(p)})">View Details</button><button class="btn primary" onclick="event.stopPropagation();addCardSelectionToCart('size-${products.indexOf(p)}')">Add to Cart</button></div></div>`}).join(""): '<div class="empty" style="grid-column:1/-1">No products found.</div>'
 }
 let modalVariantIndex=null;
 function openProduct(i){
@@ -674,6 +674,7 @@ document.getElementById("productModal").classList.add("show")
 }
 function setModalVariant(i){modalVariantIndex=Number(i);const p=products[modalVariantIndex];const price=document.getElementById("modalVariantPrice");if(price)price.textContent=`₹${p.price}`}
 function addSelectedToCart(){if(modalVariantIndex!==null)addToCart(modalVariantIndex)}
+function addCardSelectionToCart(selectId){const el=document.getElementById(selectId);if(el)addToCart(Number(el.value))}
 function orderSelectedNow(){if(modalVariantIndex!==null)addToCart(modalVariantIndex);closeModal("productModal");openCart()}
 function addToCart(i){let e=cart.find(x=>x.index===i);if(e)e.qty++;else cart.push({index:i,qty:1});saveCart()}
 function orderNow(i){addToCart(i);closeModal("productModal");openCart()}
@@ -681,9 +682,11 @@ function changeQty(i,d){let e=cart.find(x=>x.index===i);if(!e)return;e.qty+=d;if
 function deleteItem(i){cart=cart.filter(x=>x.index!==i);saveCart();renderCart()}
 function getOrderTotals(){
 let subtotal=cart.reduce((sum,item)=>sum+products[item.index].price*item.qty,0),count=cart.reduce((sum,item)=>sum+item.qty,0);
-let prices=cart.map(item=>products[item.index].price);
-let buy2Eligible=count>=3;
-let freeGiftCap=buy2Eligible?Math.min(...prices):0;
+let prices=[];cart.forEach(item=>{for(let q=0;q<item.qty;q++)prices.push(products[item.index].price)});prices.sort((a,b)=>a-b);
+// Buy 2 + 1 Free uses products already in the cart; no extra product selection is required.
+let buy2Eligible=count>=2;
+let freeQty=buy2Eligible?Math.max(1,Math.floor(count/3)):0;
+let buy2Discount=buy2Eligible?prices.slice(0,freeQty).reduce((a,b)=>a+b,0):0;
 let tenEligible=count>=5,twentyFiveEligible=count>=10;
 if(selectedOffer==="buy2"&&!buy2Eligible)selectedOffer="none";
 if(selectedOffer==="10"&&!tenEligible)selectedOffer="none";
@@ -694,9 +697,11 @@ if(selectedOffer==="none"){
   else if(twentyFiveEligible) selectedOffer="25";
 }
 let discountRate=selectedOffer==="25"?0.25:selectedOffer==="10"?0.10:0;
-let discount=Math.round(subtotal*discountRate),afterDiscount=subtotal-discount;
+let percentageDiscount=selectedOffer==="25"?Math.round(subtotal*0.25):selectedOffer==="10"?Math.round(subtotal*0.10):0;
+let discount=selectedOffer==="buy2"?buy2Discount:percentageDiscount;
+let afterDiscount=subtotal-discount;
 let freeShipping=subtotal>=499,shipping=freeShipping?0:50,total=afterDiscount+shipping;
-return {subtotal,count,discountRate,discount,afterDiscount,freeShipping,shipping,total,buy2Eligible,freeGiftCap,tenEligible,twentyFiveEligible};
+return {subtotal,count,discountRate,discount,afterDiscount,freeShipping,shipping,total,buy2Eligible,freeQty,buy2Discount,tenEligible,twentyFiveEligible};
 }
 function getGiftOptions(cap){
 return products.map((p,i)=>({p,i})).filter(({p})=>p.price<=cap);
@@ -715,7 +720,7 @@ if(!cart.length){selectedOffer="none";el.innerHTML='<div class="empty">Your cart
 let rows=cart.map(item=>{let p=products[item.index];return `<div class="cart-item"><img src="${p.image}" alt="${p.name}"><div><div class="cart-name">${p.name} — ${p.type}</div><div class="cart-meta">${p.size} · ₹${p.price}</div><div class="qty"><button onclick="changeQty(${item.index},-1)">−</button><span>${item.qty}</span><button onclick="changeQty(${item.index},1)">+</button></div></div><button class="delete" title="Delete" onclick="deleteItem(${item.index})">🗑</button></div>`}).join("");
 let t=getOrderTotals();
 let offerStatus={
- buy2:{eligible:t.buy2Eligible,label:"BUY 2 · GET 1 FREE",criteria:"Eligible with 3 or more products. If prices differ, the free product is capped at the lowest-priced item."},
+ buy2:{eligible:t.buy2Eligible,label:"BUY 2 · GET 1 FREE",criteria:"Eligible with 2 or more products. The lowest-priced item in the cart is free automatically."},
  ten:{eligible:t.tenEligible,label:"10% OFF",criteria:"Eligible with 5 or more products."},
  twentyFive:{eligible:t.twentyFiveEligible,label:"25% OFF",criteria:"Eligible with 10 or more products."}
 };
@@ -725,11 +730,11 @@ let offerHtml=`<div class="offer-selection"><div class="offer-selection-title">S
 <option value="buy2" ${offerValue==='buy2'?'selected':''} ${!t.buy2Eligible?'disabled':''}>BUY 2 · GET 1 FREE — ${offerStatus.buy2.criteria}${!t.buy2Eligible?' Not eligible yet.':''}</option>
 <option value="10" ${offerValue==='10'?'selected':''} ${!t.tenEligible?'disabled':''}>10% OFF — ${offerStatus.ten.criteria}${!t.tenEligible?' Not eligible yet.':''}</option>
 <option value="25" ${offerValue==='25'?'selected':''} ${!t.twentyFiveEligible?'disabled':''}>25% OFF — ${offerStatus.twentyFive.criteria}${!t.twentyFiveEligible?' Not eligible yet.':''}</option>
-</select></div><div class="offer-eligibility"><strong>Eligibility:</strong> Buy 2 Get 1 Free requires 3+ products · 10% off requires 5+ products · 25% off requires 10+ products.</div><div class="offer-auto-note">✓ Free shipping is applied automatically on eligible orders of ₹499 or more. It does not use up your selected offer.</div></div>`;
+</select></div><div class="offer-eligibility"><strong>Eligibility:</strong> Buy 2 Get 1 Free requires 2+ products · 10% off requires 5+ products · 25% off requires 10+ products.</div><div class="offer-auto-note">✓ Free shipping is applied automatically on eligible orders of ₹499 or more. It does not use up your selected offer.</div></div>`;
 let discountLine=t.discountRate?`<div class="summary-row"><span>${t.discountRate===0.25?"25% discount":"10% discount"}</span><span>-₹${t.discount}</span></div>`:"";
 let shippingNote=t.freeShipping?"FREE SHIPPING — your order qualifies for free shipping across Kerala.":`Add ₹${Math.max(0,499-t.subtotal)} more to qualify for free shipping across Kerala.`;
-let giftHtml=(t.buy2Eligible&&selectedOffer==='buy2')?`<div class="buy2-art"><div><div class="buy2-art-title">BUY 2 · GET 1 FREE</div><div class="buy2-art-sub">Choose a free fragrance worth up to ₹${t.freeGiftCap}.</div></div></div><div class="free-gift"><strong>Your Free Gift</strong><span>Choose one additional product priced up to ₹${t.freeGiftCap}. The offer is based on two purchased products from different price ranges.</span><select id="freeGiftSelect"><option value="">Select your free product</option>${getGiftOptions(t.freeGiftCap).map(({p,i})=>`<option value="${i}">${p.name} — ${p.type} · ₹${p.price}</option>`).join("")}</select></div>`:"";
-let totalOfferNote=selectedOffer==='buy2'?"Buy 2 Get 1 Free selected — choose your free product below.":selectedOffer==='25'?"25% off selected for this order.":selectedOffer==='10'?"10% off selected for this order.":"No promotional discount selected.";
+let giftHtml=(t.buy2Eligible&&selectedOffer==='buy2')?`<div class="buy2-art"><div><div class="buy2-art-title">BUY 2 · GET 1 FREE</div><div class="buy2-art-sub">Your lowest-priced item is free automatically. No extra product selection is required.</div></div></div><div class="free-gift"><strong>Automatic Free Item</strong><span>${t.freeQty} item${t.freeQty>1?'s':''} will be free, starting with the lowest-priced item${t.freeQty>1?'s':''} in your cart. No additional product needs to be selected.</span></div>`:"";
+let totalOfferNote=selectedOffer==='buy2'?`Buy 2 Get 1 Free selected — ${t.freeQty} lowest-priced item${t.freeQty>1?'s':''} free automatically.`:selectedOffer==='25'?"25% off selected for this order.":selectedOffer==='10'?"10% off selected for this order.":"No promotional discount selected.";
 el.innerHTML=`<div class="cart-items">${rows}</div>${offerHtml}${giftHtml}<div class="summary"><div class="summary-row"><span>Subtotal</span><span>₹${t.subtotal}</span></div>${discountLine}<div class="summary-row"><span>Shipping</span><span>${t.freeShipping?"FREE":"₹50"}</span></div><div class="shipping-note">${shippingNote}</div><div style="font-size:12px;color:var(--box-text);opacity:.82;line-height:1.45;margin:8px 0">${totalOfferNote}</div><div class="summary-row total"><span>Total</span><span>₹${t.total}</span></div><button class="btn primary" style="width:100%;margin-top:14px;padding:12px" onclick="placeOrder()">PLACE YOUR ORDER</button></div>`;
 }
 function placeOrder(){
@@ -737,7 +742,12 @@ if(!cart.length)return;
 let t=getOrderTotals(),lines=[];
 cart.forEach(item=>{let p=products[item.index];lines.push(`${p.name} ${p.type} ${p.size} x${item.qty} - ₹${p.price*item.qty}`)});
 let giftLine="";
-if(selectedOffer==='buy2'){let sel=document.getElementById("freeGiftSelect");if(sel&&sel.value){let gp=products[Number(sel.value)];giftLine=`\n\nFREE GIFT: ${gp.name} ${gp.type} ${gp.size} — ₹${gp.price} (Buy 2 Get 1 Free)`;}else{giftLine="\n\nBUY 2 GET 1 FREE: Please select the free product in the cart before placing the order.";}}
+if(selectedOffer==='buy2'){
+  let units=[];cart.forEach(item=>{for(let q=0;q<item.qty;q++)units.push(products[item.index])});
+  units.sort((a,b)=>a.price-b.price);
+  let freeUnits=units.slice(0,t.freeQty);
+  giftLine=`\n\nFREE ITEM${freeUnits.length>1?'S':''}: ${freeUnits.map(gp=>`${gp.name} ${gp.type} ${gp.size} — ₹${gp.price}`).join("; ")} (Buy 2 Get 1 Free)`;
+}
 let discountText=t.discountRate===0.25?"25% off":t.discountRate===0.10?"10% off":"No promotional offer";
 let msg=`Hello SHAH’E PERFUMES,\n\nI would like to place an order:\n\n${lines.join("\n")}${giftLine}\n\nSubtotal: ₹${t.subtotal}\nSelected offer: ${discountText}${t.discount?` (-₹${t.discount})`:""}\nShipping: ${t.freeShipping?"FREE":"₹50"}\nTotal: ₹${t.total}\n\n${t.freeShipping?"Free shipping across Kerala applies automatically.":"Shipping charges apply; please confirm delivery details."}`;
 window.open("https://wa.me/919497864457?text="+encodeURIComponent(msg),"_blank")
